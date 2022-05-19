@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap');
+
 
 * {
   margin: 0;
@@ -8,14 +9,265 @@
 
 :root {
   --primary-color: #232323;
-  --secondary-color: #32881A;
+  --alt-color: #32881A;
   --white-color: #fff;
   --bg-color: #fbfbfb;
 }
 
-/*=============== GENERAL STYLES ===============*/
-
 body {
-  font-family: 'Montserrat', sans-serif;
   font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+.vector {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ================= NAV STYLES ================ */
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--alt-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.brand span {
+  color: var(--primary-color);
+}
+
+.mobile-brand {
+  background-color: var(--white-color);
+  color: var(--alt-color);
+  padding: 5px 20px;
+}
+
+.menu-bar {
+  z-index: 1;
+}
+
+.fa-bars {
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+/* ================= MENU ================ */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  background-color: var(--primary-color);
+  height: 100vh;
+  z-index: 1;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+}
+
+.show-menu {
+  transform: translateX(0%);
+}
+
+
+.menu__links {
+  list-style: none;
+  margin-bottom: 3em;
+}
+
+
+.menu__item {
+  font-size: 1.5em;
+  color: var(--white-color);
+  text-decoration: none;
+  padding: 2em;
+}
+
+.menu__item--active {
+  color: var(--alt-color);
+
+}
+
+
+/* ================= MAIN INFO ================ */
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em;
+  margin-top: -5em;
+}
+
+.main-img {
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 0;
+  animation-name: img-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes img-animation {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+
+}
+
+.content-info__subtitle {
+  font-size: 2.5em;
+  color: var(--primary-color);
+}
+
+
+.content-info__title {
+  font-size: 3em;
+  color: var(--alt-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content__text {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  margin: .3em 0em .7em;
+  margin-bottom: 1.5em;
+  color: rgba(35, 35, 35, 0.7)
+}
+
+.btn-dark {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.btn-dark:hover {
+  background-color: var(--alt-color);
+  color: var(--white-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.sotial-networks {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: -2em;
+}
+
+.fa-brands {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin: 0 .2em;
+  margin-top: -9em;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .vector {
+    background-image: url(../img/Polygon\ 1.png);
+    background-repeat: no-repeat;
+
+  }
+
+  .brand {
+    margin-left: 2em;
+  }
+
+  .main-img {
+    width: 50%;
+  }
+
+  .content-info {
+    padding: 1em;
+  }
+
+  .sotial-networks {
+    justify-content: flex-start;
+    margin-left: 4.4em;
+  }
+
+  .fa-brands {
+    color: var(--white-color);
+
+  }
+
+}
+
+
+@media screen and (min-width: 886px) {
+
+  .menu-bar,
+  .mobile-brand {
+    display: none;
+  }
+
+  .menu {
+    transform: translateX(0%);
+    background: none;
+    height: 12vh;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu-links__content {
+    display: flex;
+    width: 100%;
+    margin-left: -4.7em;
+  }
+
+  .menu-links__content {
+    justify-content: flex-end;
+  }
+
+  .menu__item {
+    font-size: 1em;
+    color: var(--primary-color);
+  }
+
+  .menu__item--active {
+    color: var(--alt-color);
+  }
+
+  .content-info {
+    padding-right: 2em;
+  }
 }
