@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Roboto:wght@100;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #232323;
+  --secondary-color: #32881A;
+  --white-color: #fff;
+  --bg-color: #fbfbfb;
+}
+
+/*=============== GENERAL STYLES ===============*/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
